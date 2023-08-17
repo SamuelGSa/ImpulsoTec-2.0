@@ -1,8 +1,6 @@
 package schoolExercise;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import static schoolExercise.EscolaImpl.*;
@@ -122,6 +120,20 @@ public class SistemaEscolar {
                     }
                 } while (escolhaTurma != 0);
             }
+            if (escolhaAno == 4) {
+
+                System.out.println("Uma escola recebe alunos para as séries do 1°,2° e 3° ano\n" +
+                        "Cada série é composta das turmas A, B, e C.\n" +
+                        "As notas dos alunos são expressas em números de 1 a 5\n" +
+                        "A regra é que a nota 1 é o pior resultado\n" +
+                        "Para ter aprovação o aluno deve ter uma nota de 3 ou mais\n" +
+                        "\n" +
+                        "com base nessas informações, crie um código que fornece:\n" +
+                        "- porcentagem de alunos aprovados por turma, classificado por série,\n" +
+                        "- Média das notas desses alunos por turma, classificado por série\n" +
+                        "Os melhores alunos e suas respectivas notas de cada serie em ordem crescente (por nota)");
+            }
+
         }while (escolhaAno != 0);
     }
 

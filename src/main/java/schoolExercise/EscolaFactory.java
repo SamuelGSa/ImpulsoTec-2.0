@@ -153,11 +153,12 @@ public class EscolaFactory {
 
         System.out.println("    SISTEMA ESCOLAR 0.0.1    |");
         System.out.println("=============================|");
-        System.out.println("Qual Ano Escolar Deseja ver? |");
+        System.out.println("Qual informação Deseja ver?  |");
         System.out.println("=============================|");
         System.out.println("* 1 = Primeiro Ano           |");
         System.out.println("* 2 = Segundo Ano            |");
         System.out.println("* 3 = Terceiro Ano           |");
+        System.out.println("* 4 = Enunciado da Atividade |");
         System.out.println("* 0 = Sair                   |");
         System.out.println("=============================|");
     }
