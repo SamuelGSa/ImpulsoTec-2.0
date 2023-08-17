@@ -39,13 +39,13 @@ public class EscolaImpl {
                 " C:" + porcentagemAprovados(escola.getTerceiroAno().getTurmaC().getAlunos()));
     }
 
-    private static void listaAlunoNota(List<Alunos> alunosTurma) {
+    static void listaAlunoComNota(List<Alunos> alunosTurma) {
         alunosTurma.stream().forEach(S -> {
             System.out.println("Nome: " + S.getNome() + " Nota: " + S.getNota());
         });
     }
 
-    private static Integer mediaNotaTurma(List<Alunos> alunosTurma) {
+    static Integer mediaNotaTurma(List<Alunos> alunosTurma) {
 
         List<Integer> notas = new ArrayList<>();
         alunosTurma.stream().forEach(S -> {
@@ -59,7 +59,7 @@ public class EscolaImpl {
     }
 
 
-    private static String porcentagemAprovados(List<Alunos> alunosTurma) {
+    static String porcentagemAprovados(List<Alunos> alunosTurma) {
 
         var aprovados = filtraAlunosAprovados(alunosTurma).size();
         var porcentagem = (aprovados * 100) / alunosTurma.size();
