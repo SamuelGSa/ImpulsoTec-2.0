@@ -20,7 +20,7 @@ public class SistemaEscolar {
      Os melhores alunos e suas respectivas notas de cada serie em ordem crescente (por nota)
      */
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) {
         EscolaFactory escolaFactory = new EscolaFactory();
         var escola = escolaFactory.montaEscola();
 
