@@ -149,6 +149,32 @@ public class EscolaFactory {
         return escola;
     }
 
+    public void criaMenuInicial(){
+
+        System.out.println("    SISTEMA ESCOLAR 0.0.1    |");
+        System.out.println("=============================|");
+        System.out.println("Qual Ano Escolar Deseja ver? |");
+        System.out.println("=============================|");
+        System.out.println("* 1 = Primeiro Ano           |");
+        System.out.println("* 2 = Segundo Ano            |");
+        System.out.println("* 3 = Terceiro Ano           |");
+        System.out.println("* 0 = Sair                   |");
+        System.out.println("=============================|");
+    }
+
+
+    public void criaMenuEscolhaTurma(){
+
+        System.out.println("=============================|");
+        System.out.println("Qual Turma Deseja ver?       |");
+        System.out.println("=============================|");
+        System.out.println("* 1 = Turma A                |");
+        System.out.println("* 2 = Turma B                |");
+        System.out.println("* 3 = Turma C                |");
+        System.out.println("* 0 = Voltar                 |");
+        System.out.println("=============================|");
+    }
+
 }
 
 

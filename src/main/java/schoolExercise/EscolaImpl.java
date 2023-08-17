@@ -1,43 +1,11 @@
 package schoolExercise;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class EscolaImpl {
-
-    static void mediaDaNotaPorAno(Escola escola) {
-
-        System.out.println("=== ___ ===___===");
-        System.out.println("MEDIA DE NOTAS DA TURMA");
-        System.out.println("Primeiro Ano: A:" + mediaNotaTurma(escola.getPrimeiroAno().getTurmaA().getAlunos()) +
-                " B:" + mediaNotaTurma(escola.getPrimeiroAno().getTurmaB().getAlunos()) +
-                " C:" + mediaNotaTurma(escola.getPrimeiroAno().getTurmaC().getAlunos()));
-
-        System.out.println("Segundo Ano: A:" + mediaNotaTurma(escola.getSegundoAno().getTurmaA().getAlunos()) +
-                " B:" + mediaNotaTurma(escola.getSegundoAno().getTurmaB().getAlunos()) +
-                " C:" + mediaNotaTurma(escola.getSegundoAno().getTurmaC().getAlunos()));
-
-        System.out.println("Terceiro Ano: A:" + mediaNotaTurma(escola.getTerceiroAno().getTurmaA().getAlunos()) +
-                " B:" + mediaNotaTurma(escola.getTerceiroAno().getTurmaB().getAlunos()) +
-                " C:" + mediaNotaTurma(escola.getTerceiroAno().getTurmaC().getAlunos()));
-    }
-
-    static void porcentagemAprovadosPorAno(Escola escola) {
-
-        System.out.println("=== ___ ===___===");
-        System.out.println("PORCENTAGEM DE ALUNOS APROVADOS: ");
-        System.out.println("Primeiro Ano: A:" + porcentagemAprovados(escola.getPrimeiroAno().getTurmaA().getAlunos()) +
-                " B:" + porcentagemAprovados(escola.getPrimeiroAno().getTurmaB().getAlunos()) +
-                " C:" + porcentagemAprovados(escola.getPrimeiroAno().getTurmaC().getAlunos()));
-
-        System.out.println("Segundo Ano: A:" + porcentagemAprovados(escola.getSegundoAno().getTurmaA().getAlunos()) +
-                " B:" + porcentagemAprovados(escola.getSegundoAno().getTurmaB().getAlunos()) +
-                " C:" + porcentagemAprovados(escola.getSegundoAno().getTurmaC().getAlunos()));
-
-        System.out.println("Terceiro Ano: A:" + porcentagemAprovados(escola.getTerceiroAno().getTurmaA().getAlunos()) +
-                " B:" + porcentagemAprovados(escola.getTerceiroAno().getTurmaB().getAlunos()) +
-                " C:" + porcentagemAprovados(escola.getTerceiroAno().getTurmaC().getAlunos()));
-    }
 
     static void listaAlunoComNota(List<Alunos> alunosTurma) {
         alunosTurma.stream().forEach(S -> {
@@ -78,6 +46,29 @@ public class EscolaImpl {
     }
 
     static String melhoresAlunosPorTurma(Turmas turma) {
-        return "Melhores Alunos por turma, em cada Ano Escolar";
+        HashMap<String,Integer> alunosMap = new HashMap<>();
+
+        List<String> alunosAprovados = new ArrayList<>();
+        turma.getAlunos().stream().forEach(Alunos -> {
+            alunosMap.put(Alunos.getNome(),Alunos.getNota());
+        });
+
+        List<String> melhoresAlunos = new ArrayList<>();
+        int maiorNota = Integer.MIN_VALUE;
+
+        for (Map.Entry<String, Integer> entry : alunosMap.entrySet()) {
+            int nota = entry.getValue();
+            String nome = entry.getKey();
+
+            if (nota > maiorNota) {
+                melhoresAlunos.clear();
+                melhoresAlunos.add(nome);
+                maiorNota = nota;
+            } else if (nota == maiorNota) {
+                melhoresAlunos.add(nome);
+            }
+        }
+
+        return "Melhores Alunos: " + melhoresAlunos + " com nota " + maiorNota;
     }
 }
