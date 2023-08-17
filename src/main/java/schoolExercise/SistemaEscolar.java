@@ -3,8 +3,7 @@ package schoolExercise;
 import java.util.ArrayList;
 import java.util.List;
 
-import static schoolExercise.EscolaImpl.mediaDaNotaPorAno;
-import static schoolExercise.EscolaImpl.porcentagemAprovadosPorAno;
+import static schoolExercise.EscolaImpl.*;
 
 public class SistemaEscolar {
 
@@ -28,6 +27,9 @@ public class SistemaEscolar {
 
         porcentagemAprovadosPorAno(escola);
         mediaDaNotaPorAno(escola);
+        melhoresAlunosPorTurma(escola);
 
     }
+
+
 }
